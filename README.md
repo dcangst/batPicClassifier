@@ -1,4 +1,4 @@
-# batplotR - BatScope Data Visualization in R
+# batPicClassifier
 
 ## About `batPicClassifier`
 
@@ -70,6 +70,3 @@ batPicClassifier()
 ```
 
 This will install batplotr and launch the app. 
-
-
-
