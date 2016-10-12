@@ -24,7 +24,7 @@ install_github("dcangst/batPicClassifier", ref="v0.1")
 
 The package consists of the function `batPicClassifier()`. It launches a shiny app to classify bat pictures. For ease of use you can set up a script to launch the web app directly from your computer.
 
-### Mac OS / probably other UNIX systems (tested in MacOSX 10.10.3 only)
+### Mac OS / probably other UNIX systems (tested in macOS 10.12 only)
 Paste the following code into a plain text file with extension '.command'
 ```
 #! /usr/local/bin/Rscript
