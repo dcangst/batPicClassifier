@@ -1,35 +1,35 @@
 # batplotR - BatScope Data Visualization in R
 
-## About `batplotR`
+## About `batPicClassifier`
 
-`batplotR` is a `R` package to visualize data generated with [BatScope](http://www.wsl.ch/dienstleistungen/produkte/software/batscope/index_DE) and allows simple visualization of short (one night) and long (many nights) time-series of ultrasound calls recorded with a BatLogger. All you need is a Excel file export from BatScope. Most functions can be accessed from within a [Shiny](http://shiny.rstudio.com) web-app.
+`batPicClassifier` is a `R` package for quickly noting down the visible species of bat in pictures aquired with a light barrier triggered camera
 
 ## How to install
 
-To install `batplotr` you need the [`devtools`](https://github.com/hadley/devtools)package which can be installed from CRAN. Once installed you can run the following code to get the latest version `batplotr`:
+To install `batplotr` you need the [`devtools`](https://github.com/hadley/devtools)package which can be installed from CRAN (`install.packages("devtools")`. Once installed you can run the following code to get the latest version `batplotr`:
 
 ```r
 library(devtools)
-install_github("dcangst/batplotr")
+install_github("dcangst/batPicClassifier")
 ```
 
 or to get a specific version:
 
 ```r
 library(devtools)
-install_github("dcangst/batplotr", ref="v0.1")
+install_github("dcangst/batPicClassifier", ref="v0.1")
 ```
 
-## Standalone Shiny Web App
+## the main (and almost only) function of the web app
 
-The package includes the function `shiny_batPlots()`. It launches a shiny web app that replicates most futures of the package in a web app. For ease of use you can set up a script to launch the web app directly from your computer.
+The package consists of the function `batPicClassifier()`. It launches a shiny app to classify bat pictures. For ease of use you can set up a script to launch the web app directly from your computer.
 
 ### Mac OS / probably other UNIX systems (tested in MacOSX 10.10.3 only)
 Paste the following code into a plain text file with extension '.command'
 ```
 #!/usr/bin/Rscript
 
-if("batplotr" %in% rownames(installed.packages())){
+if("batPicClassifier" %in% rownames(installed.packages())){
   tryCatch(suppressMessages(batplotr::github_update("batplotr","dcangst/batplotr")),error=function(Cond){devtools::install_github("dcangst/batplotr",dependencies=TRUE)})
 } else {
   if("devtools" %in% rownames(installed.packages())){
