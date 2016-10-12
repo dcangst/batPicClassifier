@@ -1,0 +1,17 @@
+Package: batPicClassifier
+Title: view and classify bat pictures
+Version: 1.0
+Authors@R: person("Daniel", "Angst", , "dcangst@gmail.com", 
+    role = c("aut", "cre"))
+Description: look throug pictures and note bat species
+Depends:
+    R (>= 3.3.1),
+    shiny,
+    rhandsontable,
+    stringr,
+    dplyr,
+    tidyr
+License: file LICENCE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 5.0.1
