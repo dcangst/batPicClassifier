@@ -83,10 +83,18 @@ shinyApp(
           bat_data_lookup(),
           by = "input")
       } else {
+        datetime <- matrix(
+          unlist(
+            str_split(
+              as.character(
+                file.mtime(str_c(input$dirpath, imgFiles(), sep = "/"))
+              ), " ")
+          ), ncol = 2, byrow = TRUE)
+
         imgData <- data.frame(
           filename = imgFiles(),
-          time = as.character(file.mtime(
-            str_c(input$dirpath, imgFiles(), sep = "/"))),
+          date = datetime[, 1],
+          time = datetime[, 2],
           input = "",
           species = "",
           stringsAsFactors = FALSE)
@@ -124,6 +132,7 @@ shinyApp(
           source = bat_data_lookup()$input, strict = TRUE,
           allowInvalid = TRUE) %>%
         hot_col("filename", readOnly = TRUE) %>%
+        hot_col("date", readOnly = TRUE) %>%
         hot_col("time", readOnly = TRUE) %>%
         hot_col("species", readOnly = TRUE)
     })
